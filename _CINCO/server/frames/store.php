@@ -1,0 +1,39 @@
+<?php
+    include('../scripts/insert_estadisticas.php');
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+<header></header>
+    <div>
+        <h3>Tienda Online</h3>
+        <div style="text-align:center;"><a href="http://mcp.tuars.com/" target="_blank">Ver</a><br /><br />
+            <a href="https://skydrive.live.com/?cid=b536524b7144d93b&id=B536524B7144D93B%21104&authkey=!AI1FAy9sj_xqlvM" target="_blank">Descarga</a>
+        </div>
+        <h5>Descripci&oacute;n:</h5>
+        <p>Con el aumento progresivo del internet, las tiendas virtuales son hoy una realidad, esta es una tienda
+            cl&aacute;sica realiza con programacion php
+        </p>
+        <h5>Retos:</h5>
+           <ul>
+               <li>Manejo a nivel medio del lenguaje.</li>
+               <li>Optimizar la r&aacute;pida respuesta del servidor.</li>
+           </ul>
+        <h5>Requisitos:</h5>
+        <p>
+            Restaurar la base de datos y si es necesario modificar los archivos .php para adecuarlos a la base de datos (en caso
+            de que los articulos tengan otras subcategorias no compatibles con los articulos actuales)
+        </p>
+        <h5>Lanzamiento:</h5>
+            Diciembre 2011
+        <h5>Vista previa:</h5>
+            <div style="text-align:center"><img src="store.png"/><br />
+            </div>
+    </div>
+</body>
+</html>

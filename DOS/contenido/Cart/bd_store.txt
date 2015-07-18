@@ -1,0 +1,247 @@
+-- phpMyAdmin SQL Dump
+-- version 2.10.3
+-- http://www.phpmyadmin.net
+-- 
+-- Servidor: localhost
+-- Tiempo de generación: 02-05-2011 a las 00:39:54
+-- Versión del servidor: 5.0.51
+-- Versión de PHP: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+-- 
+-- Base de datos: `store`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_categories`
+-- 
+
+CREATE TABLE `store_categories` (
+  `id` int(11) NOT NULL auto_increment,
+  `cat_title` varchar(50) default NULL,
+  `cat_desc` text,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `cat_title` (`cat_title`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_categories`
+-- 
+
+INSERT INTO `store_categories` VALUES (1, 'GORRAS', 'Gorras y Sombreros en diferentes tallas y colores!');
+INSERT INTO `store_categories` VALUES (2, 'Playeras', 'Playeras en diferentes tallas y colores!');
+INSERT INTO `store_categories` VALUES (3, 'Libros', 'Variedad de libros, autores y temas!');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_items`
+-- 
+
+CREATE TABLE `store_items` (
+  `id` int(11) NOT NULL auto_increment,
+  `cat_id` int(11) NOT NULL,
+  `item_title` varchar(75) default NULL,
+  `item_price` float(8,2) default NULL,
+  `item_desc` text,
+  `item_image` varchar(50) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_items`
+-- 
+
+INSERT INTO `store_items` VALUES (1, 1, 'Gorra de Baseball', 50.00, 'Gorra de Baseball para dama o caballero.', 'imagenes/baseballhat.png');
+INSERT INTO `store_items` VALUES (2, 1, 'Gorra de Basquetball', 80.00, 'Gorra de Basquet para dama o caballero.', 'imagenes/basquetballhat.jpg');
+INSERT INTO `store_items` VALUES (3, 1, 'Sombrero', 102.00, 'Sombreros para dama o caballero.', 'imagenes/sombrero.png');
+INSERT INTO `store_items` VALUES (4, 2, 'Playera Lacoste', 502.00, 'Playera Lacoste tipo Polo original para caballero.', 'imagenes/lacoste.png');
+INSERT INTO `store_items` VALUES (5, 2, 'Playera Polo', 702.00, 'Playera de la marca POLO original para caballero.', 'imagenes/polo.png');
+INSERT INTO `store_items` VALUES (6, 2, 'Playera POLO N', 10000.00, 'Playera de la marca POLO original para uso exclusivo.', 'imagenes/labarbie.jpg');
+INSERT INTO `store_items` VALUES (7, 3, 'HTLM Basico', 250.00, 'Libro para aprender HTML basico.', 'imagenes/htmlbook.jpg');
+INSERT INTO `store_items` VALUES (8, 3, 'PHP Basico', 350.00, 'Libro para aprender PHP basico.', 'imagenes/phpbook.png');
+INSERT INTO `store_items` VALUES (9, 3, 'AJAX Basico', 550.00, 'Libro para aprender AJAX basico.', 'imagenes/ajaxbook.png');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_item_color`
+-- 
+
+CREATE TABLE `store_item_color` (
+  `id` int(11) NOT NULL auto_increment,
+  `item_id` int(11) NOT NULL,
+  `item_color` varchar(25) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_item_color`
+-- 
+
+INSERT INTO `store_item_color` VALUES (1, 1, 'Rojo');
+INSERT INTO `store_item_color` VALUES (2, 1, 'Negro');
+INSERT INTO `store_item_color` VALUES (3, 1, 'Azul');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_item_size`
+-- 
+
+CREATE TABLE `store_item_size` (
+  `id` int(11) NOT NULL auto_increment,
+  `item_id` int(11) NOT NULL,
+  `item_size` varchar(25) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_item_size`
+-- 
+
+INSERT INTO `store_item_size` VALUES (1, 1, 'Talla unica');
+INSERT INTO `store_item_size` VALUES (2, 2, 'Talla unica');
+INSERT INTO `store_item_size` VALUES (3, 3, 'Talla unica');
+INSERT INTO `store_item_size` VALUES (4, 4, 'S/CH');
+INSERT INTO `store_item_size` VALUES (6, 4, 'M/M');
+INSERT INTO `store_item_size` VALUES (7, 4, 'L/G');
+INSERT INTO `store_item_size` VALUES (8, 4, 'XL/XG');
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_orders`
+-- 
+
+CREATE TABLE `store_orders` (
+  `id` int(11) NOT NULL auto_increment,
+  `order_date` datetime default NULL,
+  `order_name` varchar(100) default NULL,
+  `order_address` varchar(255) default NULL,
+  `order_city` varchar(50) default NULL,
+  `order_state` char(2) default NULL,
+  `order_zip` varchar(10) default NULL,
+  `order_tel` varchar(25) default NULL,
+  `order_email` varchar(100) default NULL,
+  `item_total` float(6,2) default NULL,
+  `shipping_total` float(6,2) default NULL,
+  `authorization` varchar(50) default NULL,
+  `status` enum('Procesado','Pendiente') default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_orders`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_orders_items`
+-- 
+
+CREATE TABLE `store_orders_items` (
+  `id` int(11) NOT NULL auto_increment,
+  `order_id` int(11) default NULL,
+  `sel_item_id` int(11) default NULL,
+  `sel_item_qty` smallint(6) default NULL,
+  `sel_item_size` varchar(25) default NULL,
+  `sel_item_color` varchar(25) default NULL,
+  `sel_item_price` float(6,2) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_orders_items`
+-- 
+
+
+-- --------------------------------------------------------
+
+-- 
+-- Estructura de tabla para la tabla `store_shoppertrack`
+-- 
+
+CREATE TABLE `store_shoppertrack` (
+  `id` int(11) NOT NULL auto_increment,
+  `session_id` varchar(32) default NULL,
+  `sel_item_id` int(11) default NULL,
+  `sel_item_qty` smallint(6) default NULL,
+  `sel_item_size` varchar(25) default NULL,
+  `sel_item_color` varchar(25) default NULL,
+  `date_added` datetime default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=83 ;
+
+-- 
+-- Volcar la base de datos para la tabla `store_shoppertrack`
+-- 
+
+INSERT INTO `store_shoppertrack` VALUES (2, 'bc1287f143ea557ffbfdee4a842cd23f', 1, 2, 'Talla unica', 'Negro', '2011-03-22 12:40:01');
+INSERT INTO `store_shoppertrack` VALUES (4, 'bc1287f143ea557ffbfdee4a842cd23f', 7, 5, '', '', '2011-03-22 13:23:45');
+INSERT INTO `store_shoppertrack` VALUES (5, '450a8268e5e35cbd26ef1b9b3b9a1448', 2, 10, 'Talla unica', '', '2011-03-22 16:38:59');
+INSERT INTO `store_shoppertrack` VALUES (6, 'b51e4b5678728e3dcf64c65ca2b008a2', 2, 2, 'Talla unica', '', '2011-03-23 23:08:14');
+INSERT INTO `store_shoppertrack` VALUES (7, 'b51e4b5678728e3dcf64c65ca2b008a2', 3, 1, 'Talla unica', '', '2011-03-23 23:09:36');
+INSERT INTO `store_shoppertrack` VALUES (8, 'b51e4b5678728e3dcf64c65ca2b008a2', 6, 1, '', '', '2011-03-23 23:10:53');
+INSERT INTO `store_shoppertrack` VALUES (9, 'b51e4b5678728e3dcf64c65ca2b008a2', 6, 1, '', '', '2011-03-23 23:30:44');
+INSERT INTO `store_shoppertrack` VALUES (10, '19c79d0b9eba5410cb5f6cd740da9c5b', 5, 1, '', '', '2011-03-23 23:42:43');
+INSERT INTO `store_shoppertrack` VALUES (11, '19c79d0b9eba5410cb5f6cd740da9c5b', 2, 1, 'Talla unica', '', '2011-03-23 23:57:25');
+INSERT INTO `store_shoppertrack` VALUES (12, '19c79d0b9eba5410cb5f6cd740da9c5b', 8, 3, '', '', '2011-03-23 23:58:28');
+INSERT INTO `store_shoppertrack` VALUES (13, '19c79d0b9eba5410cb5f6cd740da9c5b', 1, 1, 'Talla unica', 'Azul', '2011-03-24 00:50:43');
+INSERT INTO `store_shoppertrack` VALUES (14, '19c79d0b9eba5410cb5f6cd740da9c5b', 1, 4, 'Talla unica', 'Negro', '2011-03-24 00:51:05');
+INSERT INTO `store_shoppertrack` VALUES (20, 'f1b2f476a75aa9e91c1a84333e71121c', 2, 1, 'Talla unica', '', '2011-03-24 20:11:25');
+INSERT INTO `store_shoppertrack` VALUES (19, 'f1b2f476a75aa9e91c1a84333e71121c', 2, 3, 'Talla unica', '', '2011-03-24 19:48:22');
+INSERT INTO `store_shoppertrack` VALUES (18, 'f1b2f476a75aa9e91c1a84333e71121c', 7, 5, '', '', '2011-03-24 19:47:41');
+INSERT INTO `store_shoppertrack` VALUES (31, '945807ed2d35e0008df313958ddfbbde', 9, 1, '', '', '2011-03-26 10:49:57');
+INSERT INTO `store_shoppertrack` VALUES (28, '5b5873e07aa100fcd62293436486b259', 2, 1, 'Talla unica', '', '2011-03-25 23:28:53');
+INSERT INTO `store_shoppertrack` VALUES (29, '5b5873e07aa100fcd62293436486b259', 2, 1, 'Talla unica', '', '2011-03-26 00:29:49');
+INSERT INTO `store_shoppertrack` VALUES (27, '926b52e666d0a3b907fe1ad3ce2ed8b5', 7, 1, '', '', '2011-03-25 16:37:13');
+INSERT INTO `store_shoppertrack` VALUES (32, '945807ed2d35e0008df313958ddfbbde', 7, 4, '', '', '2011-03-26 10:51:10');
+INSERT INTO `store_shoppertrack` VALUES (33, '945807ed2d35e0008df313958ddfbbde', 4, 4, 'M/M', '', '2011-03-26 12:23:12');
+INSERT INTO `store_shoppertrack` VALUES (36, '2009336b13dbf0ddf99d6057e098fc47', 2, 1, 'Talla unica', '', '2011-03-28 18:35:34');
+INSERT INTO `store_shoppertrack` VALUES (35, '2009336b13dbf0ddf99d6057e098fc47', 3, 1, 'Talla unica', '', '2011-03-28 18:34:38');
+INSERT INTO `store_shoppertrack` VALUES (37, '2009336b13dbf0ddf99d6057e098fc47', 2, 1, 'Talla unica', '', '2011-03-28 19:49:13');
+INSERT INTO `store_shoppertrack` VALUES (38, '2009336b13dbf0ddf99d6057e098fc47', 9, 1, '', '', '2011-03-28 19:49:42');
+INSERT INTO `store_shoppertrack` VALUES (39, '2009336b13dbf0ddf99d6057e098fc47', 2, 1, 'Talla unica', '', '2011-03-28 19:50:02');
+INSERT INTO `store_shoppertrack` VALUES (40, '1a20efbda5e31d82bcb0ca65c0485105', 2, 1, 'Talla unica', '', '2011-03-30 18:23:29');
+INSERT INTO `store_shoppertrack` VALUES (41, '1a20efbda5e31d82bcb0ca65c0485105', 7, 1, '', '', '2011-03-30 18:30:07');
+INSERT INTO `store_shoppertrack` VALUES (42, '1a20efbda5e31d82bcb0ca65c0485105', 8, 3, '', '', '2011-03-30 18:34:53');
+INSERT INTO `store_shoppertrack` VALUES (43, '1a20efbda5e31d82bcb0ca65c0485105', 6, 1, '', '', '2011-03-30 18:35:35');
+INSERT INTO `store_shoppertrack` VALUES (44, '1a20efbda5e31d82bcb0ca65c0485105', 8, 2, '', '', '2011-03-30 18:40:48');
+INSERT INTO `store_shoppertrack` VALUES (47, 'ee54f2772ee6d12b894fa46c2c65f8c8', 8, 1, '', '', '2011-03-31 10:19:12');
+INSERT INTO `store_shoppertrack` VALUES (46, 'c9835f4f211e414c99ec89b982cddff9', 6, 6, '', '', '2011-03-31 09:41:13');
+INSERT INTO `store_shoppertrack` VALUES (48, '99ecf47de04bf1b7ba59b69060d1945e', 8, 1, '', '', '2011-03-31 15:00:28');
+INSERT INTO `store_shoppertrack` VALUES (49, '99ecf47de04bf1b7ba59b69060d1945e', 4, 3, 'M/M', '', '2011-03-31 15:00:57');
+INSERT INTO `store_shoppertrack` VALUES (50, '288e68e98baa003ebe206131fc64f716', 2, 1, 'Talla unica', '', '2011-04-04 20:07:43');
+INSERT INTO `store_shoppertrack` VALUES (51, '288e68e98baa003ebe206131fc64f716', 8, 1, '', '', '2011-04-04 20:08:21');
+INSERT INTO `store_shoppertrack` VALUES (52, '288e68e98baa003ebe206131fc64f716', 3, 3, 'Talla unica', '', '2011-04-04 22:25:31');
+INSERT INTO `store_shoppertrack` VALUES (53, '5c2c7e1bc2fc0807de170ff403c1e8f0', 1, 6, 'Talla unica', 'Negro', '2011-04-28 22:53:49');
+INSERT INTO `store_shoppertrack` VALUES (54, '5c2c7e1bc2fc0807de170ff403c1e8f0', 9, 2, '', '', '2011-04-28 22:54:17');
+INSERT INTO `store_shoppertrack` VALUES (55, 'ebbc8cd538be0b9d5861bf051e90d985', 1, 1, 'Talla unica', 'Azul', '2011-04-30 01:02:47');
+INSERT INTO `store_shoppertrack` VALUES (56, 'ebbc8cd538be0b9d5861bf051e90d985', 7, 1, '', '', '2011-04-30 01:02:57');
+INSERT INTO `store_shoppertrack` VALUES (57, 'ebbc8cd538be0b9d5861bf051e90d985', 5, 1, '', '', '2011-04-30 01:03:04');
+INSERT INTO `store_shoppertrack` VALUES (58, 'dd29944d1eedddf39f4af2fbd44e2c0b', 1, 1, 'Talla unica', 'Azul', '2011-05-01 13:54:28');
+INSERT INTO `store_shoppertrack` VALUES (59, 'c8b57ef6671fe2c541d7f56e44cd1668', 1, 1, 'Talla unica', 'Azul', '2011-05-01 13:55:51');
+INSERT INTO `store_shoppertrack` VALUES (60, 'c8b57ef6671fe2c541d7f56e44cd1668', 1, 1, 'Talla unica', 'Negro', '2011-05-01 13:56:01');
+INSERT INTO `store_shoppertrack` VALUES (61, 'c8b57ef6671fe2c541d7f56e44cd1668', 1, 8, 'Talla unica', 'Azul', '2011-05-01 13:56:07');
+INSERT INTO `store_shoppertrack` VALUES (62, 'c8b57ef6671fe2c541d7f56e44cd1668', 1, 1, 'Talla unica', 'Azul', '2011-05-01 13:56:44');
+INSERT INTO `store_shoppertrack` VALUES (63, '6bc9c6738c557a46d1317afe40b64a37', 1, 1, 'Talla unica', 'Azul', '2011-05-01 14:04:19');
+INSERT INTO `store_shoppertrack` VALUES (64, '754572ce06a38b9ced3848b120367207', 1, 1, 'Talla unica', 'Azul', '2011-05-01 14:05:51');
+INSERT INTO `store_shoppertrack` VALUES (65, '0dfccb772d797f7dcd36d311604145b3', 2, 1, 'Talla unica', '', '2011-05-01 14:11:32');
+INSERT INTO `store_shoppertrack` VALUES (66, '02bd9528413fc35d2a8ff486adbccd48', 4, 1, 'L/G', '', '2011-05-01 14:11:56');
+INSERT INTO `store_shoppertrack` VALUES (68, 'a564215f59432304ea23d9fdaf643fb9', 9, 1, '', '', '2011-05-01 14:19:49');
+INSERT INTO `store_shoppertrack` VALUES (69, '869ff713c5338de9d9cd39d7f04e6e38', 6, 1, '', '', '2011-05-01 14:25:17');
+INSERT INTO `store_shoppertrack` VALUES (70, '28fe20f8b4469efd68c41da31592f059', 1, 1, 'Talla unica', 'Azul', '2011-05-01 14:28:42');
+INSERT INTO `store_shoppertrack` VALUES (71, 'a9f793458b92bcb89924716ab41fa6a2', 1, 1, 'Talla unica', 'Azul', '2011-05-01 14:29:21');
+INSERT INTO `store_shoppertrack` VALUES (79, 'e68bbb3c9aa0dfcb016ef49ee813ec84', 3, 3, 'Talla unica', '', '2011-05-01 16:16:37');
+INSERT INTO `store_shoppertrack` VALUES (78, 'b46cd877f3a0d56f7171ee162ec84fbf', 5, 3, '', '', '2011-05-01 14:47:21');
+INSERT INTO `store_shoppertrack` VALUES (77, 'b46cd877f3a0d56f7171ee162ec84fbf', 9, 1, '', '', '2011-05-01 14:47:05');
+INSERT INTO `store_shoppertrack` VALUES (76, '81aa2939e74c75cc99cfa5d56a45e1f1', 9, 1, '', '', '2011-05-01 14:46:36');
+INSERT INTO `store_shoppertrack` VALUES (80, '5e5fe819105d8cc81825a313b9913882', 2, 1, 'Talla unica', '', '2011-05-01 16:17:49');
+INSERT INTO `store_shoppertrack` VALUES (81, '290e6531eb92fcc17859a3139998069c', 7, 1, '', '', '2011-05-01 18:29:25');
+INSERT INTO `store_shoppertrack` VALUES (82, '6351d373a191aaab9161cd88a928f41d', 4, 1, 'L/G', '', '2011-05-01 18:47:28');

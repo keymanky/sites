@@ -1,0 +1,87 @@
+/*Orden 
+	1-Selector universal y etiquetas html
+	2-Id
+	3-Clases
+	
+	En cada seccion son ordenados alfabeticamente las propiedades
+	Equipo 9: Jorge Salgado Mendoza
+*/
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover{
+	color:#FF0;
+}
+body{
+	/*Degradados para los diferentes navegadores se puede simular una facilmente con background-color: rgba(r,g,b, 0-1)*/
+	background: -webkit-gradient(linear, 0 25%, 0 75%, from(#000), to(#000), color-stop(0.5, #006BFF));;/*Safari y q se basen en webkit*/
+	background: -moz-linear-gradient(top, #000 20%, #006BFF , #000 80%);/*Mozilla*/
+	background: -o-linear-gradient(top, #000 20%, #006BFF , #000 80%);/*Opera*/		
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorStr=#06F, endColorStr=#6CA9FF);/*IE 5.5+*/
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 100%;
+	line-height: 1.6em;	
+}
+h3{
+	font-size: 1.5em;
+}
+header{
+	font-size: 1.2em;
+	line-height: 1em;
+}
+header, footer{
+	background: #000;
+	display: block;
+	margin: auto;		
+	max-width: 100%;	
+	text-align: center;	
+}
+img{
+	max-width: 100%;
+}
+figure{
+	display: inline-block;
+	margin: 2%;	
+	max-width: 495px;
+	vertical-align: middle;
+}
+footer{
+	color: #FFF;
+	font-size: 0.9em;
+}
+p{
+	font-size: .875em;
+}
+section{
+	background: #FFC;
+  	border-color: #FF0;
+	border-radius: 1em;
+  	border-style: dashed;
+	max-width: 700px;
+	margin: auto;
+	padding: 1.5625%;	/*Q tan cerca esta el texto de los bordes*/
+}
+table{
+	border-spacing: 1em;
+	margin: auto;	
+}
+td a:hover{
+	background-color:#333;
+}
+#derecha{
+	max-width: 100px;
+}
+#derecha a{
+	color:#000;
+}
+#derecha a:hover{
+	color:#00F;
+}
+.contenido{
+	text-align:justify;
+}

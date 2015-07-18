@@ -1,0 +1,88 @@
+body{
+	color: #FFF;
+	font-family: Verdana, Geneva, sans-serif;
+	text-align: center;
+	font-size: 18px;
+}
+
+#cabecera{
+	height: 200px;
+	width: 1024px;
+	position:absolute;
+	left: 50%;
+	margin-left: -512px;
+}
+
+#panel{
+	background-color: #94BAE6;
+	height: 550px;
+	width: 300px;
+	margin-top: 200px;
+	position:absolute;
+	left: 50%;
+	margin-left: -512px;
+}
+
+#contenido{
+	background-color: #000;
+	height: 550px;
+	width: 724px;
+	position: absolute;
+	margin-top: 200px;
+	left: 50%;
+	margin-left: -212px;
+}
+
+#flotante{
+	background-color: #CEE3F6;
+	width: 724px;
+	height: 100px;
+	position: absolute;
+	margin-top: 650px;
+	left: 50%;
+	margin-left: -212px;
+	z-index:1;
+	filter:alpha(opacity=40);
+	-moz-opacity:.60;
+	opacity:.40;
+	color: #000;
+}
+
+#spanreloj{
+	background-color: #FFF;
+	width: 150px;
+	height: 70px;
+	position: absolute;
+	margin-top: 650px;
+	left: 50%;
+	margin-left: -437px;
+	z-index:1;
+	filter:alpha(opacity=40);
+	-moz-opacity:.60;
+	opacity:.40;
+	color: #000;
+}
+#tablas{
+	font-size: 30px;
+	text-align: center;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+#categoria{
+	background-color: #94BAE6;
+}
+#categoria:hover{
+	background-color: #FF0;
+}
+.sinsub{
+	text-decoration: none;
+	color: #000;
+}
+
+.sinsub:hover{
+	color:#000;
+	font-size:36px;
+}
+.sinsub: vlink{
+	color: #000;
+}

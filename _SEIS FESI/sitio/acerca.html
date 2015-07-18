@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title> .-+ GEORGE +-.</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style_common.css" />  
+  <!--modernizr enables HTML5 elements and feature detects -->
+  <script src="js/modernizr-1.5.min.js"></script>
+  <script src="js/jquery-1.7.1.js"></script>  
+  <script src="js/sliding_effect.js"></script>   
+  <script src="js/propios.js"></script>
+</head>
+
+<body>
+<header></header>
+  <div id="main">
+    <!--Siguiente es el contenido del sitio-->
+    <div id="site_content">
+    	<!--Barra de la izquierda -->
+		<div id="sidebar_container">
+        	<div class="sidebar_logo">
+	            <a href="index.html" ><img src="images/logo2.png" height="150" /></a>
+            </div>
+        	<div class="sidebar">
+                  <h3>Seleccione:</h3>
+				    	<ul id="sliding-navigation"> 
+                            <li class="sliding-element"><a class="seleccionado" onclick="show('desplegar')"; href="#">Acerca de ...</a>
+                                   <div id="desplegar" style="display:none;">
+                                        <ul>
+                                	       <li><a href="#Perfil">Perfil</a></li>
+                                	       <li><a href="#M@C">M@C</a></li>
+                                	       <li><a href="#Contacto">Contacto</a></li>
+                                        </ul>
+                                    </div>
+                            </li>
+                             <li class="sliding-element"><a href="#">Servicios</a></li>
+                             <li class="sliding-element"><a href="index.html">Proyectos</a></li>
+					   </ul>
+            </div>
+        </div>
+        
+        <!--Contenido principal -->
+        <div class="content" style="height: 600px; overflow: auto; text-align:justify; padding: 10px 10px 10px 0px;">
+                  <a name="Perfil"></a>
+                          <hr /><h2>Perfil</h2><hr />
+                          <img src="images/PERFIL.jpg" style="align:center"/><br/>
+                          Hola soy Jorge Salgado Mendoza, egrese de la Lic. en M&aacute;tematicas Aplicadas y Computaci&oacute;n en la UNAM, con especialidad en Sistemas Computacionales.Tengo 24 a&ntilde;os y vivo en el DF.<br />&nbsp;<br /> 
+						  Tengo 2 años de experiencia en mi pasion (Area TI). Soy una persona optimista, trabajadora y analitica. <br /> 
+                          Tengo el Certificado de T&eacute;cnico en Mantenimiento de Computadoras y realice mis pr&aacute;cticas profesionales en ISCYS. Actualmente programo en File Maker, Bases de datos, HTML 5, PHP, CSS, C, JAVA, C#.<br />&nbsp;<br />
+                          <a href="http://www.facebook.com/keymanky" target="_blank">M&aacute;s</a><br />&nbsp;<br />
+                  <a name="M@C"></a>
+                          <hr /><h2>M@C</h2><hr />
+                          El licenciado en Matem&aacute;ticas Aplicadas y Computaci&oacute;n aplica creativamente las diversas t&eacute;cnicas matem&aacute;ticas y computacionales para analizar, evaluar y resolver, por medio de modelos, problemas en diversas &aacute;reas de conocimiento que afectan de manera directa o indirecta a la sociedad.
+                          Analista burs&aacute;til y financiero, catedr&aacute;tico, investigador, consultor en diversas &aacute;reas y proyectos, o dise&ntilde;ador de software son algunas de las actividades que puede desempe&ntilde;ar este profesionista.<br />&nbsp;<br />
+                          <a href="http://www.mac.acatlan.unam.mx" target="_blank">M&aacute;s</a><br />&nbsp;<br />
+                  <a name="Contacto"></a>
+                          <hr /><h2>Contacto</h2><hr />
+                          Me puedes mandar un correo a keymanky@hotmail.com o bien me puedes marcar al numero 04455-34748105<br />&nbsp;<br />
+        </div>
+    </div>    
+    <footer>
+      <p>Keymanky Copyright &copy; | Jorge Salgado Mendoza |</p>
+    </footer>
+  </div>
+</body>
+</html>

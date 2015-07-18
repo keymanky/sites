@@ -1,0 +1,22 @@
+.accordion {
+	width: 650px;
+	color: #FFF;
+}
+.accordion h3 {
+	background: #333 url(../Imagenes/arrow-square.gif) no-repeat right -51px;
+	padding: 7px 15px;
+	margin: 0;
+	border-bottom: none;
+	cursor: pointer;
+}
+.accordion h3:hover {
+	background-color: #1C1C1C;
+}
+.accordion h3.active {
+	background-position: right 5px;
+}
+.accordion p {
+	background: #E6E6E6;
+	margin: 0;
+	padding: 10px 15px 20px;
+}

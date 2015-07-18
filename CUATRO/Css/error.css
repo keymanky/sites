@@ -1,0 +1,19 @@
+body{
+	background: #333;
+}
+footer{
+	text-align: center;
+	color: #FFF;
+	text-decoration: blink;
+	font-family: Calibri, "Arial Rounded MT Bold", "Lucida Sans Unicode", "Verdana";
+}
+#creditos{
+	text-align: center;
+	font-size: 12px;
+	height: 50px;
+	width: 900px;
+}
+#error{
+	text-align: center;
+	margin-top: 0px;	
+}

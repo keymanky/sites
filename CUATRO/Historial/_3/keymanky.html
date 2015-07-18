@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml 1-Transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta http-equiv="pragma" content="nocache" />        
+        <link rel="shortcut icon" href="Imagenes/Icono.ico" />
+		<link href="Css/stylo.css" rel="stylesheet" type="text/css" />    
+		<link href="Css/capas.css" rel="stylesheet" type="text/css" />         
+        <script language="javascript" type="text/javascript" src="Js/jquery-1.3.2.min.js"></script>
+        <script language="javascript" type="text/javascript" src="Js/reloj.js"></script>
+        <script language="javascript" type="text/javascript" src="Js/actualizacion.js"></script>    
+        <script language="javascript" type="text/javascript" src="Js/aleatorio.js"></script>            
+		<script type="text/javascript"> 
+        $(document).ready(function() 
+		{	
+            // Muestra y oculta los menús
+            $('ul li:has(ul)').hover(
+                function(e)
+                {
+                    $(this).find('ul').slideDown();
+                },
+                function(e)
+                {
+                    $(this).find('ul').slideUp();
+                }
+             );
+			
+			
+			$("#uno").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/1.html");
+			});
+			
+			$("#dos").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/2.html");
+			});
+						
+			$("#tres").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/3.html");
+			});
+			
+			$("#cuatro").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/4.html");
+			});			
+			
+			$("#c").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/c.html");
+			});		
+			
+			$("#cmas").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/c++.html");
+			});				
+			
+			$("#java").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/java.html");
+			});	
+			
+			$("#manuales").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/manuales.html");
+			});	
+			
+			$("#humano").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/humano.html");
+			});	
+			
+			$("#reloj").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/reloj.html");
+			});				
+			
+			$("#acerca").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/acerca.html");
+			});	
+			
+			$("#contact").click(function(evento){
+			evento.preventDefault();
+			$("#contenido").load("Paginas/contacto.php");
+			});				
+						
+			$("#default").click(function(evento){
+			 location.reload();
+			});
+        });   
+		</script>
+
+		<title>.[ keym@nky ].</title>
+     </head>
+     
+     <body  onLoad="muestraReloj(),actualiza()">
+     	<div id="fondo">
+        
+        	<div id="cabecera">
+           	  <table>   
+                <tr>
+            	<td><img src="Imagenes/Logo.png" /></td>
+           
+            	<td>
+                	<ul class="menu"> 
+                   		<li><a href="#" id="default">Inicio</a></li> 
+                   		
+                        <li><a href="#">Matem&aacute;ticas</a> 
+                            <ul> 
+                                 <li><a href="#" id="uno">1er semestre</a></li> 
+                                 <li><a href="#" id="dos">2do semestre</a></li> 
+                                 <li><a href="#" id="tres">3er semestre</a></li> 
+                                 <li><a href="#" id="cuatro">4to semestre</a></li>                          
+                            </ul> 
+                   		</li> 
+                        
+                   		<li><a href="#">Programaci&oacute;n</a>
+                              <ul> 
+                                 <li><a href="#" id="c">C</a></li> 
+                                 <li><a href="#" id="cmas">C++</a></li> 
+                                 <li><a href="#" id="java">Java</a></li> 
+                                 <!--<li><a href="#">PHP</a></li> 
+                                 <li><a href="#">JAVASCRIPT</a></li> 
+                                 <li><a href="#">SQL</a></li> 
+                                 <li><a href="#">CSS</a></li> -->
+                                <li><a href="#" id="manuales">Manuales</a></li>                                                                 
+                              </ul>                    
+                   		</li> 
+                        
+                   		<li><a href="#">Proyectos</a>
+                        		<ul>
+                                	<li><a href="#">Tienda Online 2011</a></li>
+                                	<li><a href="#" id="humano">Humano 2010</a></li>
+                                    <li><a href="#" id="reloj">Reloj 2008</a></li>
+                                 </ul>
+                        </li>
+                   		
+                        <li><a href="#">Contacto</a>
+                        		<ul>
+                                	<li><a href="#" id="acerca">Acerca de...</a></li>
+                                    <li><a href="#" id="contact">Sugerencias</a></li>
+                                </ul>
+                        </li>
+				</ul></td> 
+                </tr>
+                
+              </table>
+            </div>
+            
+ 			<div id="izquierda">
+            <p align="center">
+                P&aacute;ginas amigas e interesantes:<br /><br />			
+                <a href="http://ejohn.org/" target="_TOP">Un gran Programador</a><br />
+                <a href="http://www.htmlya.com.ar/"	target="_TOP">Cursos Programaci&oacute;n</a><br  />
+                <a href='http://ego985.blogspot.com/' target='_TOP'> Ego </a><br />		
+                <a href=' http://www.mac.acatlan.unam.mx/contenido/' target='_TOP'>Sitio Oficial de Mac </a><br />	
+                <a  href='http://geslava.netfirms.com/' target='_TOP'>Geslava</a><br />
+                <a href='https://sites.google.com/site/mariosanchezdominguezpj/' target='_TOP'>Lic Mario</a><br />
+                <a href='http://www.facebook.com/programacioncompetitiva' target='_TOP'>Algoritmia Avanzada </a><br />	            
+                <a href='http://conclase.net/' target='_TOP'>Ayuda de Programaci&oacute;n</a><br/>
+                <a href="http://www.desarrolloweb.com/" target="_TOP">Foro desarrollo Web</a><br />
+                <a href="http://www.flickr.com/photos/15628958@N03/page2/" target="_TOP">Arquitectura</a><br /><br /><br />
+              <div id="spanreloj"></div><br /><br /><br /><br /><br />
+              <div id="modificacion" align="center"></div>
+			</p>
+            </div>
+            
+            <div id="contenido">
+					<hr /><h3 class="titulo">Bienvenido</h3><hr /><br />
+						<script type="text/javascript">
+							var Imagenes=new ImagenesObj();
+							src = Imagenes[ Math.floor(Math.random() * Imagenes.N) ] ;
+							document.write("<img width=\"250\" height=\"200\" src=Imagenes/"+src+">");
+						</script>
+                        <br /><br />En toda la web la información es pública y cada quien es responsable de como la usa. No me hago responsable por el uso que le des a la informaci&oacute;n en mi sitio, ni tampoco por la información de enlaces externos. <br /><br />
+                        
+                    <div id="anuncios">
+            				Sitio Optimizado:<br />
+                            <img src="Imagenes/nav2.png" /><br />(versiones 2010 o superiores)
+		            </div>
+            </div>
+        </div>
+     </body>
+     
+</html>

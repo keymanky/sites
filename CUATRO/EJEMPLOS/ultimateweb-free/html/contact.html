@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>DreamTemplate</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+jQuery(document).ready(function(){
+	$('#contactform').submit(function(){				  
+		var action = $(this).attr('action');
+		$.post(action, { 
+			name: $('#name').val(),
+			email: $('#email').val(),
+			company: $('#company').val(),
+			subject: $('#subject').val(),
+			message: $('#message').val()
+		},
+			function(data){
+				$('#contactform #submit').attr('disabled','');
+				$('.response').remove();
+				$('#contactform').before('<p class="response">'+data+'</p>');
+				$('.response').slideDown();
+				if(data=='Message sent!') $('#contactform').slideUp();
+			}
+		); 
+		return false;
+	});
+});
+// ]]>
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="header_resize">
+    <div class="header">
+      <div class="logo"><a href="index.html"><img src="images/logo.gif" width="143" height="97" border="0" alt="logo" /></a></div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="work.html">Gallery </a></li>
+          <li><a href="work.html">Blog</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="header_blog">
+    <div class="resize">
+      <div class="search">
+        <form id="form1" name="form1" method="post" action="">
+          <span>
+          <input name="q" type="text" class="keywords" id="textfield" maxlength="50" value="Search..." />
+          </span>
+          <input name="b" type="image" src="images/search.gif" class="button" />
+        </form>
+      </div>
+      <h2>Your company's welcome message or slogan. Lorem ipsum dolor sit amet, consectur el.</h2>
+      <p>Donec metus lacus, porta id, auctor sit amet, aliquam eu, lacus. Quisque sagittis vulputate orci.</p>
+    </div>
+    <div class="header_blog2">
+      <h2>contact</h2>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <br />
+        Aenean commodo ligula eget dolor. Aenean massa. </p>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="body">
+    <div class="body_resize">
+      <div class="body_resize_top">
+        <div class="body_resize_bottom">
+          <div class="left">
+            <h2>Contact details</h2>
+            <p><a href="#">Tel</a>:          +44 (0) 1234 6765<br />
+              <a href="#">Fax</a>:         +44 (0) 1234 6765<br />
+              <a href="#">Email</a>:      mail@mail.com<br />
+              <a href="#">Skype</a>:     888 888 888 888</p>
+            <p>&nbsp;</p>
+            <div class="bg"></div>
+            <p>&nbsp;</p>
+            <h2>Some Text Here</h2>
+            <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. </p>
+          </div>
+          <div class="right">
+            <h2>Contact company</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>&nbsp;</p>
+            <form action="contact.php" method="post" id="contactform">
+              <ol>
+                <li>
+                  <label for="name">First Name <span class="red">*</span></label>
+                  <input id="name" name="name" class="text" />
+                </li>
+                <li>
+                  <label for="email">Your email <span class="red">*</span></label>
+                  <input id="email" name="email" class="text" />
+                </li>
+                <li>
+                  <label for="company">Company</label>
+                  <input id="company" name="company" class="text" />
+                </li>
+                <li>
+                  <label for="subject">Subject</label>
+                  <input id="subject" name="subject" class="text" />
+                </li>
+                <li>
+                  <label for="message">Message <span class="red">*</span></label>
+                  <textarea id="message" name="message" rows="6" cols="50"></textarea>
+                </li>
+                <li class="buttons">
+                  <input type="image" name="imageField" id="imageField" src="images/send.gif" class="send" />
+                  <div class="clr"></div>
+                </li>
+              </ol>
+            </form>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+    </div>
+    <div class="clr"></div>
+  </div>  
+  <div class="FBG">
+    <div class="FBG_resize">
+      <div class="left">
+        <h2>About </h2>
+        <ul>
+          <li><a href="#">Overview</a></li>
+          <li> <a href="#">Another Link</a></li>
+          <li> <a href="#">Our Company</a></li>
+          <li> <a href="#">Our Staff</a></li>
+          <li> <a href="#">Mission </a></li>
+          <li> <a href="#">Statement</a></li>
+        </ul>
+      </div>
+      <div class="left">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="#">First Service</a></li>
+          <li> <a href="#">Second Service</a></li>
+          <li> <a href="#">Another Service</a></li>
+          <li> <a href="#">A Fourth Service</a></li>
+        </ul>
+      </div>
+      <div class="left">
+        <h2>Media</h2>
+        <ul>
+          <li><a href="#">Image Gallery</a></li>
+          <li> <a href="#">Video Gallery</a></li>
+          <li> <a href="#">Audio Files</a></li>
+          <li> <a href="#">The Podcast</a></li>
+        </ul>
+      </div>
+      <div class="left">
+        <h2>Blog</h2>
+        <ul>
+          <li><a href="#">Category One</a></li>
+          <li> <a href="#">Category 2</a></li>
+          <li> <a href="#">Another Category</a></li>
+          <li> <a href="#">Category</a></li>
+          <li> <a href="#">A Fifth Category</a></li>
+        </ul>
+      </div>
+      <div class="left">
+        <h2>More Links</h2>
+        <ul>
+          <li><a href="#">Sign Up Now</a></li>
+          <li> <a href="#">We Are Hiring</a></li>
+          <li> <a href="#">Terms &amp; Conditions</a></li>
+          <li> <a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="left">
+        <h2>Contact Us</h2>
+        <ul>
+          <li><a href="#">Email Sales</a></li>
+          <li> <a href="#">Email Support</a></li>
+          <li> <a href="#">Phone: 555-555-3211</a></li>
+          <li> <a href="#">Send Us Feedback</a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+    <div class="clr"></div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize"> <a href="#"><img src="images/footer_logo.gif" alt="picture" width="270" height="60" border="0" /></a>
+      <p class="rightt">© Copyright Your Site Name Dot Com. All Rights Reserved <br />
+        <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">RSS </a> (Blue) <a href="http://www.bluewebtemplates.com">Website Templates</a></p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

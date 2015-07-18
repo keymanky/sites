@@ -1,0 +1,29 @@
+<!--ETIQUETA OCULTA =inicio especificamos XHTML modo strict=-->
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml 1-Transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<!--FIN DE ETIQUETA OCULTA-->
+
+
+<!--INICIO DE LA CABECERA el meta especifica compatibilidad con lenguaje castellano (iso8859-1) -->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Detectando su resoluci&oacute;n</title>
+		<script language="javascript" type="text/javascript" src="contenido/funciones.js">
+		</script>
+	</head>
+<!--FIN DE LA CABECERA-->
+
+<!--CUERPO DE LA PAGINA WEB-->
+	<body>
+    	<script language="javascript" type="text/javascript">
+		var a= resolucion();
+		var devolver= (a==1) ? "mayor" : "menor";
+        //document.write("Su resoluci&oacute;n es : " + devolver + " a 1024 px de ancho");   
+		if(a)
+			window.location= "contenido/1.html";
+		else
+			window.location= "contenido/2.html";
+		</script>
+	</body>
+<!--FIN DEL CUERPO-->
+	</html>

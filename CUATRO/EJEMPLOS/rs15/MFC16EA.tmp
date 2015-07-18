@@ -1,0 +1,42 @@
+* {
+	padding:0; margin:0
+}
+html {background:url(images/normalbg.jpg) repeat;}
+ul {list-style:none;}
+a:link, a:active, a:visited {color:#60762f;}
+a:hover {color:#000;}
+body {background:url(images/background.jpg) top left repeat-x; font:12px Verdana, Geneva, sans-serif; color:#302a24; display:block; height:100%; width:100%;}
+#wrap {width:944px; margin:auto;}
+#ribbon {height:145px;}
+#nav {height:54px;}
+#homeheader {background:url(images/header.jpg) no-repeat; height:285px;}
+
+h1#logo {font: bold 46px Georgia, "Times New Roman", Times, serif; display:block; padding:46px 0 0 0; color:#60762f; float:left;; letter-spacing:-2px;}
+#logo .desc {font:normal 14px "Trebuchet MS", Arial, Helvetica, sans-serif!important; color:#000; display:block!important; letter-spacing:9px; text-transform:uppercase; text-align:center;}
+h1#logo .black {font-style:italic; color:#302a24!important;}
+#logo a {color:#60762f; text-decoration:none;}
+#logo a .black {color:#302a24; text-decoration:none;}
+#logo a:hover {color:#302a24;}
+#logo a:hover .black {color:#60762f!important;}
+
+h1 a, h2 a, h3 a, h4 a {text-decoration:none;}
+h1 a:visited, h2 a:visited, h3 a:visited {text-decoration:none;}
+#intro {width:45%; float:right; padding:46px 10px 0 35px; background:url(images/open-bracket.gif) 0 38px no-repeat; height:90px}
+#intro p {
+	font:14px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height:18px;
+	display:block;
+	float:left;
+}
+.bracket-end {
+	background:url(images/end-bracket.gif) no-repeat 0px 38px;
+	float: right;
+	height: 135px;
+	width: 30px;
+}
+
+#nav ul {list-style:none; display:block; padding:9px 5px 0 20px;}
+#nav li {display:inline; font: bold 22px "Trebuchet MS", Arial, Helvetica, sans-serif; text-transform:uppercase;}
+#nav a {display:block; background:url(images/menu1-right.gif) right top no-repeat; height:45px; float:left; margin-right:1px; color:#f5f1e9; text-decoration:none;}
+#nav a span {display:block; height:35px; background:url(images/menu1-left.gif) left top no-repeat; margin-right:6px; padding:10px 10px 0 16px;}
+#nav a:hover { background: url(images/menu2-right.gif) right top no-repeat; color:#fff;

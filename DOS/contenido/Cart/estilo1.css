@@ -1,0 +1,57 @@
+/* CSS Document */
+body
+{
+	background-color: #FF6600;
+	text-decoration:inherit;
+	font-size:large;
+	 
+}
+
+h1
+{
+	color: #990000;
+	text-align:center;
+	
+}
+h2
+{
+	color: #000000;
+	
+}
+h3
+{
+	color:#FFFFFF;
+}
+hr
+{
+	color:#FFCC00;
+}
+td 
+{ 
+   	font-family:verdana,arial; 
+   	font-size:8pt; 
+} 
+.estilotabla
+{
+   	background-color: ; 
+   	border-style: dotted;
+   	border-color:666666;
+   	border-width:1px;
+	text-align:center;
+	
+}	
+.estilocelda
+{ 
+   	background-color: #00CC00; 
+   	font-size:15pt;
+	text-align:right;
+} 
+#cent
+{ 
+   	background-color:ddeeff; 
+   	color:#CC6666;
+   	font-weight:bold; 
+   	font-size:10pt;
+	text-align:center
+} 
+

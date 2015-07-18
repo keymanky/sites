@@ -1,0 +1,11 @@
+.divcen{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 800px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -400px;
+                overflow: auto;
+		background-color:#0B0B61;
+}

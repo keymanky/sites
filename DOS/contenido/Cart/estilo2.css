@@ -1,0 +1,56 @@
+/* CSS Document */
+body
+{
+	background-color: #FFFF00;
+}
+
+h1
+{
+	color:#993333;
+	text-align:center;
+}
+hr
+{
+	color:#FFCC00;
+}
+td 
+{ 
+   	font-family:verdana,arial; 
+   	font-size:8pt; 
+} 
+.estilotabla
+{
+	margin: 0px 0px 0px 150px;
+	table-align: center;
+   	background-color: #009933 ; 
+   	border-style: dotted;
+   	border-color:666666;
+   	border-width:1px;
+	text-align:center;
+	
+}	
+.estilotabla1
+{
+	border: medium;
+	margin: 0px 0px 0px 925px;
+   	background-color: ; 
+   	border-style: dotted;
+   	border-color:666666;
+   	border-width:1px;
+	text-align:center;
+	
+}
+.estilocelda
+{ 
+   	background-color: #00CC00; 
+   	font-size:15pt;
+	text-align:right;
+} 
+#cent
+{ 
+   	background-color:ddeeff; 
+   	color:#CC6666;
+   	font-weight:bold; 
+   	font-size:10pt;
+	text-align:center
+} 
